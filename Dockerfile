@@ -5,8 +5,7 @@ FROM tezos/tezos:v10-release_91cd25ba_20210705150731
 USER root
 RUN \
 	apk -Uuv add groff less python3 py-pip curl jq && \
-	pip install awscli && \
-	apk --purge -v del py-pip && \
+	pip install awscli six && \
 	rm /var/cache/apk/*
 
 COPY ./start-tezos.sh /home/tezos/start-tezos.sh
