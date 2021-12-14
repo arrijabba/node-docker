@@ -26,7 +26,7 @@ start_node() {
 
 s3_sync() {
 	# If the current1 key exists, node1 is the most current set of blockchain data
-	echo "A 404 error below is expected and nothing to be concerned with."
+	echo "A 404 error below is expected and nothing to be concerned with. "
 	aws s3api head-object --request-payer requester --bucket $chainbucket --key current1
 	if [ $? -eq 0 ]
 	then
